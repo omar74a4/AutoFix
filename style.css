@@ -1409,3 +1409,80 @@ body {
     font-size: 10.5px !important;
   }
 }
+
+/* Final mobile home product layout: always 3 cards per row. */
+@media (max-width: 900px) {
+  body.site-shell-page #homeContent .replacement-grid,
+  body.site-shell-page #homeContent .accessories-grid,
+  body.site-shell-page #homeContent .tools-grid,
+  body.site-shell-page #homeContent .fluid-grid,
+  body.site-shell-page #homeContent .Performance-grid,
+  #homeContent .replacement-grid,
+  #homeContent .accessories-grid,
+  #homeContent .tools-grid,
+  #homeContent .fluid-grid,
+  #homeContent .Performance-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: calc(100vw - 24px) !important;
+    max-width: 480px !important;
+    gap: 8px !important;
+    margin-inline: auto !important;
+    padding-inline: 0 !important;
+  }
+
+  body.site-shell-page #homeContent .replacement-grid > *,
+  body.site-shell-page #homeContent .accessories-grid > *,
+  body.site-shell-page #homeContent .tools-grid > *,
+  body.site-shell-page #homeContent .fluid-grid > *,
+  body.site-shell-page #homeContent .Performance-grid > *,
+  #homeContent .replacement-grid > *,
+  #homeContent .accessories-grid > *,
+  #homeContent .tools-grid > *,
+  #homeContent .fluid-grid > *,
+  #homeContent .Performance-grid > * {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 104px !important;
+    height: auto !important;
+    padding: 10px 4px !important;
+    border-radius: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+  }
+
+  body.site-shell-page #homeContent .replacement-grid > * img,
+  body.site-shell-page #homeContent .accessories-grid > * img,
+  body.site-shell-page #homeContent .tools-grid > * img,
+  body.site-shell-page #homeContent .fluid-grid > * img,
+  body.site-shell-page #homeContent .Performance-grid > * img,
+  #homeContent .replacement-grid > * img,
+  #homeContent .accessories-grid > * img,
+  #homeContent .tools-grid > * img,
+  #homeContent .fluid-grid > * img,
+  #homeContent .Performance-grid > * img {
+    width: min(22vw, 72px) !important;
+    height: 54px !important;
+    object-fit: contain !important;
+    margin: 0 0 8px !important;
+  }
+
+  body.site-shell-page #homeContent .replacement-grid > * p,
+  body.site-shell-page #homeContent .accessories-grid > * p,
+  body.site-shell-page #homeContent .tools-grid > * p,
+  body.site-shell-page #homeContent .fluid-grid > * p,
+  body.site-shell-page #homeContent .Performance-grid > * p,
+  #homeContent .replacement-grid > * p,
+  #homeContent .accessories-grid > * p,
+  #homeContent .tools-grid > * p,
+  #homeContent .fluid-grid > * p,
+  #homeContent .Performance-grid > * p {
+    font-size: 10.5px !important;
+    line-height: 1.12 !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+}
