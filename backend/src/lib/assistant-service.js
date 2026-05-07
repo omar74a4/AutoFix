@@ -220,7 +220,7 @@ const PART_GROUP_LABELS = {
 };
 
 function normalizeLooseText(value) {
-  return String(value || "")
+  return normalizeArabicDigits(String(value || ""))
     .toLowerCase()
     .replace(/[\u064B-\u065F]/g, "")
     .replace(/[أإآ]/g, "ا")
@@ -229,6 +229,15 @@ function normalizeLooseText(value) {
     .replace(/[^a-z0-9\u0600-\u06ff\s-]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function normalizeArabicDigits(value) {
+  const arabicZero = "٠".charCodeAt(0);
+  const persianZero = "۰".charCodeAt(0);
+
+  return String(value || "")
+    .replace(/[٠-٩]/g, (digit) => String(digit.charCodeAt(0) - arabicZero))
+    .replace(/[۰-۹]/g, (digit) => String(digit.charCodeAt(0) - persianZero));
 }
 
 function hasLooseMatch(haystack, candidate) {
@@ -1406,7 +1415,10 @@ export async function processAssistantChat({ user = null, locale, mode, message,
     ? await buildDiagnosisPayload({ locale: normalizedLocale, message: trimmedMessage, context: normalizedContext })
     : await buildPartsSearchPayload({ locale: normalizedLocale, message: trimmedMessage, context: normalizedContext });
   const forceDeterministicReply = normalizedMode === "parts_search"
-    && String(payload.intent || "").startsWith("serial_verification:");
+    && (
+      String(payload.intent || "").startsWith("serial_verification:")
+      || (Array.isArray(payload.replyData?.parts) && payload.replyData.parts.length > 0)
+    );
 
   let reply = null;
   let provider = "fallback";

@@ -2258,4 +2258,37 @@ body.site-shell-auth .checkout-container {
   body.site-shell-page .profile-btn {
     width: 100%;
   }
+
+  body.site-shell-page .site-footer {
+    padding: 34px 0 24px;
+  }
+
+  body.site-shell-page .site-footer__inner {
+    width: min(100% - 28px, 1180px);
+  }
+
+  body.site-shell-page .site-footer__grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  body.site-shell-page .site-footer__brand,
+  body.site-shell-page .site-footer__links {
+    min-width: 0;
+  }
+
+  body.site-shell-page .site-footer__brand .site-brand {
+    justify-content: flex-start;
+  }
+
+  body.site-shell-page .site-footer__links {
+    gap: 10px;
+  }
+
+  body.site-shell-page .site-footer__bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    text-align: left;
+  }
 }

@@ -29,11 +29,11 @@ export const env = {
     jwtExpiresIn: process.env.JWT_EXPIRES_IN || "7d"
   },
   db: {
-    host: process.env.DB_HOST || "127.0.0.1",
-    port: numberValue(process.env.DB_PORT, 3306),
-    user: process.env.DB_USER || "root",
-    password: process.env.DB_PASSWORD || "",
-    name: process.env.DB_NAME || "autofix",
+    host: process.env.DB_HOST || process.env.MYSQLHOST || "127.0.0.1",
+    port: numberValue(process.env.DB_PORT || process.env.MYSQLPORT, 3306),
+    user: process.env.DB_USER || process.env.MYSQLUSER || "root",
+    password: process.env.DB_PASSWORD || process.env.MYSQLPASSWORD || "",
+    name: process.env.DB_NAME || process.env.MYSQLDATABASE || "autofix",
     connectionLimit: numberValue(process.env.DB_CONNECTION_LIMIT, 10)
   },
   openai: {
