@@ -1266,3 +1266,127 @@ body {
     max-height: 88px !important;
   }
 }
+
+/* ========================= */
+/* Mobile Home Dense Grids */
+/* ========================= */
+
+@media (max-width: 700px) {
+  .replacement-section,
+  .accessories-section,
+  .tools-section,
+  .fluid-section,
+  .Performance-section,
+  .companies-section {
+    padding: 42px 12px !important;
+    overflow-x: hidden;
+  }
+
+  .replacement-section h2,
+  .accessories-section h2,
+  .tools-section h2,
+  .fluid-section h2,
+  .Performance-section h2,
+  .companies-section h2 {
+    font-size: clamp(30px, 8vw, 40px) !important;
+    line-height: 1.05;
+    margin-bottom: 22px !important;
+  }
+
+  .replacement-grid,
+  .accessories-grid,
+  .tools-grid,
+  .fluid-grid,
+  .Performance-grid {
+    width: min(100%, 430px) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+    margin: 0 auto !important;
+  }
+
+  .replacement-item,
+  .accessories-item,
+  .tools-item,
+  .fluid-item,
+  .Performance-item {
+    min-height: 158px !important;
+    padding: 16px 10px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 12px 26px rgba(31, 45, 74, 0.08) !important;
+  }
+
+  .replacement-item img,
+  .accessories-item img,
+  .tools-item img,
+  .fluid-item img,
+  .Performance-item img {
+    width: min(34vw, 118px) !important;
+    height: 88px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .replacement-item p,
+  .accessories-item p,
+  .tools-item p,
+  .fluid-item p,
+  .Performance-item p {
+    font-size: 14px !important;
+    line-height: 1.2;
+    margin: 0 !important;
+  }
+
+  .companies {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: min(100%, 430px) !important;
+    gap: 14px !important;
+    margin: 0 auto !important;
+  }
+
+  .company {
+    width: 100% !important;
+    min-height: 160px !important;
+    padding: 16px 10px !important;
+    border-radius: 20px !important;
+  }
+
+  .company img {
+    width: min(32vw, 112px) !important;
+    height: 82px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .company h4 {
+    font-size: 14px !important;
+    line-height: 1.18;
+  }
+}
+
+@media (max-width: 380px) {
+  .replacement-grid,
+  .accessories-grid,
+  .tools-grid,
+  .fluid-grid,
+  .Performance-grid,
+  .companies {
+    gap: 12px !important;
+  }
+
+  .replacement-item,
+  .accessories-item,
+  .tools-item,
+  .fluid-item,
+  .Performance-item,
+  .company {
+    min-height: 146px !important;
+  }
+
+  .replacement-item img,
+  .accessories-item img,
+  .tools-item img,
+  .fluid-item img,
+  .Performance-item img,
+  .company img {
+    height: 76px !important;
+  }
+}
